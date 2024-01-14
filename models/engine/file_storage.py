@@ -7,7 +7,7 @@ from models.state import State
 from models.city import wzqCity
 from models.place import wzqPlace
 from models.amenity import Amenity
-from models.review import Review
+from models.review import wzqReview
 
 
 class FileStorage:

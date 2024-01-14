@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class Review(BaseModel):
+class wzqReview(BaseModel):
     """Represent a review.
 
     Attributes:
@@ -12,6 +12,6 @@ class Review(BaseModel):
         text (str): The text of the review.
     """
 
-    place_id = ""
-    user_id = ""
-    text = ""
+    wzqplace_id = ""
+    wzquser_id = ""
+    wzqtext = ""

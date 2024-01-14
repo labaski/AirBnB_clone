@@ -17,7 +17,7 @@ from models.state import State
 from models.place import wzqPlace
 from models.city import wzqCity
 from models.amenity import Amenity
-from models.review import Review
+from models.review import wzqReview
 
 
 class TestFileStorage_instantiation(unittest.TestCase):
@@ -76,7 +76,7 @@ class TestFileStorage_methods(unittest.TestCase):
         pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
-        rv = Review()
+        rv = wzqReview()
         models.storage.new(bm)
         models.storage.new(us)
         models.storage.new(st)
@@ -110,7 +110,7 @@ class TestFileStorage_methods(unittest.TestCase):
         pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
-        rv = Review()
+        rv = wzqReview()
         models.storage.new(bm)
         models.storage.new(us)
         models.storage.new(st)
@@ -141,7 +141,7 @@ class TestFileStorage_methods(unittest.TestCase):
         pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
-        rv = Review()
+        rv = wzqReview()
         models.storage.new(bm)
         models.storage.new(us)
         models.storage.new(st)
