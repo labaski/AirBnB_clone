@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class User(BaseModel):
+class wzqUser(BaseModel):
     """Represent a User.
 
     Attributes:
@@ -13,7 +13,7 @@ class User(BaseModel):
         last_name (str): The last name of the user.
     """
 
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+    wzqemail = ""
+    wzqpassword = ""
+    wzqfirst_name = ""
+    wzqlast_name = ""
