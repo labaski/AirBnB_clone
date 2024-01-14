@@ -21,7 +21,7 @@ from io import StringIO
 from unittest.mock import patch
 
 
-class TestHBNBCommand_prompting(unittest.TestCase):
+class wzqTestHBNBCommand_prompting(unittest.TestCase):
     """Unittests for testing prompting of the HBNB command interpreter."""
 
     def test_prompt_string(self):
@@ -33,7 +33,7 @@ class TestHBNBCommand_prompting(unittest.TestCase):
             self.assertEqual("", output.getvalue().strip())
 
 
-class TestHBNBCommand_help(unittest.TestCase):
+class wzqTestHBNBCommand_help(unittest.TestCase):
     """Unittests for testing help messages of the HBNB command interpreter."""
 
     def test_help_quit(self):
@@ -105,7 +105,7 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertEqual(h, output.getvalue().strip())
 
 
-class TestHBNBCommand_exit(unittest.TestCase):
+class wzqTestHBNBCommand_exit(unittest.TestCase):
     """Unittests for testing exiting from the HBNB command interpreter."""
 
     def test_quit_exits(self):
@@ -117,7 +117,7 @@ class TestHBNBCommand_exit(unittest.TestCase):
             self.assertTrue(HBNBCommand().onecmd("EOF"))
 
 
-class TestHBNBCommand_create(unittest.TestCase):
+class wzqTestHBNBCommand_create(unittest.TestCase):
     """Unittests for testing create from the HBNB command interpreter."""
 
     @classmethod
@@ -199,7 +199,7 @@ class TestHBNBCommand_create(unittest.TestCase):
             self.assertIn(testKey, storage.all().keys())
 
 
-class TestHBNBCommand_show(unittest.TestCase):
+class wzqTestHBNBCommand_show(unittest.TestCase):
     """Unittests for testing show from the HBNB command interpreter"""
 
     @classmethod
@@ -231,13 +231,13 @@ class TestHBNBCommand_show(unittest.TestCase):
             self.assertEqual(correct, output.getvalue().strip())
 
     def test_show_invalid_class(self):
-        correct = "** class doesn't exist **"
+        wzqcorrect = "** class doesn't exist **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("show MyModel"))
-            self.assertEqual(correct, output.getvalue().strip())
+            self.assertEqual(wzqcorrect, output.getvalue().strip())
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("MyModel.show()"))
-            self.assertEqual(correct, output.getvalue().strip())
+            self.assertEqual(wzqcorrect, output.getvalue().strip())
 
     def test_show_missing_id_space_notation(self):
         correct = "** instance id missing **"
@@ -706,7 +706,7 @@ class TestHBNBCommand_destroy(unittest.TestCase):
             self.assertNotIn(obj, storage.all())
 
 
-class TestHBNBCommand_all(unittest.TestCase):
+class wzqTestHBNBCommand_all(unittest.TestCase):
     """Unittests for testing all of the HBNB command interpreter."""
 
     @classmethod
@@ -852,7 +852,7 @@ class TestHBNBCommand_all(unittest.TestCase):
             self.assertNotIn("BaseModel", output.getvalue().strip())
 
 
-class TestHBNBCommand_update(unittest.TestCase):
+class wzqTestHBNBCommand_update(unittest.TestCase):
     """Unittests for testing update from the HBNB command interpreter."""
 
     @classmethod
@@ -1501,7 +1501,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         self.assertEqual(9.8, test_dict["latitude"])
 
 
-class TestHBNBCommand_count(unittest.TestCase):
+class wzqTestHBNBCommand_count(unittest.TestCase):
     """Unittests for testing count method of HBNB comand interpreter."""
 
     @classmethod
