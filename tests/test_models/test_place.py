@@ -40,7 +40,7 @@ class TestPlace_instantiation(unittest.TestCase):
 
     def test_user_id_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(str, type(wzqPlace.user_id))
+        self.assertEqual(str, type(wzqPlace.wzquser_id))
         self.assertIn("user_id", dir(pl))
         self.assertNotIn("user_id", pl.__dict__)
 
@@ -52,49 +52,49 @@ class TestPlace_instantiation(unittest.TestCase):
 
     def test_description_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(str, type(wzqPlace.description))
+        self.assertEqual(str, type(wzqPlace.wzqdescription))
         self.assertIn("description", dir(pl))
         self.assertNotIn("desctiption", pl.__dict__)
 
     def test_number_rooms_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(int, type(wzqPlace.number_rooms))
+        self.assertEqual(int, type(wzqPlace.wzqnumber_rooms))
         self.assertIn("number_rooms", dir(pl))
         self.assertNotIn("number_rooms", pl.__dict__)
 
     def test_number_bathrooms_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(int, type(wzqPlace.number_bathrooms))
+        self.assertEqual(int, type(wzqPlace.wzqnumber_bathrooms))
         self.assertIn("number_bathrooms", dir(pl))
         self.assertNotIn("number_bathrooms", pl.__dict__)
 
     def test_max_guest_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(int, type(wzqPlace.max_guest))
+        self.assertEqual(int, type(wzqPlace.wzqmax_guest))
         self.assertIn("max_guest", dir(pl))
         self.assertNotIn("max_guest", pl.__dict__)
 
     def test_price_by_night_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(int, type(wzqPlace.price_by_night))
+        self.assertEqual(int, type(wzqPlace.wzqprice_by_night))
         self.assertIn("price_by_night", dir(pl))
         self.assertNotIn("price_by_night", pl.__dict__)
 
     def test_latitude_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(float, type(wzqPlace.latitude))
+        self.assertEqual(float, type(wzqPlace.wzqlatitude))
         self.assertIn("latitude", dir(pl))
         self.assertNotIn("latitude", pl.__dict__)
 
     def test_longitude_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(float, type(wzqPlace.longitude))
+        self.assertEqual(float, type(wzqPlace.wzqlongitude))
         self.assertIn("longitude", dir(pl))
         self.assertNotIn("longitude", pl.__dict__)
 
     def test_amenity_ids_is_public_class_attribute(self):
         pl = wzqPlace()
-        self.assertEqual(list, type(wzqPlace.amenity_ids))
+        self.assertEqual(list, type(wzqPlace.wzqamenity_ids))
         self.assertIn("amenity_ids", dir(pl))
         self.assertNotIn("amenity_ids", pl.__dict__)
 

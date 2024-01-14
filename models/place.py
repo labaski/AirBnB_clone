@@ -21,13 +21,13 @@ class wzqPlace(BaseModel):
     """
 
     wqzcity_id = ""
-    user_id = ""
+    wzquser_id = ""
     name = ""
-    description = ""
-    number_rooms = 0
-    number_bathrooms = 0
-    max_guest = 0
-    price_by_night = 0
-    latitude = 0.0
-    longitude = 0.0
-    amenity_ids = []
+    wzqdescription = ""
+    wzqnumber_rooms = 0
+    wzqnumber_bathrooms = 0
+    wzqmax_guest = 0
+    wzqprice_by_night = 0
+    wzqlatitude = 0.0
+    wzqlongitude = 0.0
+    wzqamenity_ids = []
