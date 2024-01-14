@@ -14,7 +14,7 @@ from time import sleep
 from models.base_model import BaseModel
 
 
-class TestBaseModel_instantiation(unittest.TestCase):
+class wzqTestBaseModel_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the BaseModel class."""
 
     def test_no_args_instantiates(self):
@@ -33,9 +33,9 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertEqual(datetime, type(BaseModel().updated_at))
 
     def test_two_models_unique_ids(self):
-        bm1 = BaseModel()
-        bm2 = BaseModel()
-        self.assertNotEqual(bm1.id, bm2.id)
+        wzqbm1 = BaseModel()
+        wzqbm2 = BaseModel()
+        self.assertNotEqual(wzqbm1.id, wzqbm2.id)
 
     def test_two_models_different_created_at(self):
         bm1 = BaseModel()
@@ -50,16 +50,16 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertLess(bm1.updated_at, bm2.updated_at)
 
     def test_str_representation(self):
-        dt = datetime.today()
-        dt_repr = repr(dt)
+        wzqdt = datetime.today()
+        wzqdt_repr = repr(wzqdt)
         bm = BaseModel()
         bm.id = "123456"
-        bm.created_at = bm.updated_at = dt
-        bmstr = bm.__str__()
-        self.assertIn("[BaseModel] (123456)", bmstr)
-        self.assertIn("'id': '123456'", bmstr)
-        self.assertIn("'created_at': " + dt_repr, bmstr)
-        self.assertIn("'updated_at': " + dt_repr, bmstr)
+        bm.created_at = bm.updated_at = wzqdt
+        wzqbmstr = bm.__str__()
+        self.assertIn("[BaseModel] (123456)", wzqbmstr)
+        self.assertIn("'id': '123456'", wzqbmstr)
+        self.assertIn("'created_at': " + wzqdt_repr, wzqbmstr)
+        self.assertIn("'updated_at': " + wzqdt_repr, wzqbmstr)
 
     def test_args_unused(self):
         bm = BaseModel(None)
@@ -86,7 +86,7 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertEqual(bm.updated_at, dt)
 
 
-class TestBaseModel_save(unittest.TestCase):
+class wzqTestBaseModel_save(unittest.TestCase):
     """Unittests for testing save method of the BaseModel class."""
 
     @classmethod
@@ -138,7 +138,7 @@ class TestBaseModel_save(unittest.TestCase):
             self.assertIn(bmid, f.read())
 
 
-class TestBaseModel_to_dict(unittest.TestCase):
+class wzqTestBaseModel_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the BaseModel class."""
 
     def test_to_dict_type(self):
