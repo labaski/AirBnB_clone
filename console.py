@@ -38,7 +38,7 @@ class wzqHBNBCommand(cmd.Cmd):
         prompt (str): The command prompt.
     """
 
-    prompt = "(ingchrist) "
+    prompt = "(ing-christ) "
     __classes = {
         "BaseModel",
         "User",
