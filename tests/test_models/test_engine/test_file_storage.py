@@ -20,7 +20,7 @@ from models.amenity import Amenity
 from models.review import wzqReview
 
 
-class TestFileStorage_instantiation(unittest.TestCase):
+class wzqTestFileStorage_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the FileStorage class."""
 
     def test_FileStorage_instantiation_no_args(self):
@@ -40,7 +40,7 @@ class TestFileStorage_instantiation(unittest.TestCase):
         self.assertEqual(type(models.storage), FileStorage)
 
 
-class TestFileStorage_methods(unittest.TestCase):
+class wzqTestFileStorage_methods(unittest.TestCase):
     """Unittests for testing methods of the FileStorage class."""
 
     @classmethod
@@ -70,34 +70,34 @@ class TestFileStorage_methods(unittest.TestCase):
             models.storage.all(None)
 
     def test_new(self):
-        bm = BaseModel()
-        us = wzqUser()
-        st = wzqState()
-        pl = wzqPlace()
-        cy = wzqCity()
-        am = Amenity()
-        rv = wzqReview()
-        models.storage.new(bm)
-        models.storage.new(us)
-        models.storage.new(st)
-        models.storage.new(pl)
-        models.storage.new(cy)
-        models.storage.new(am)
-        models.storage.new(rv)
-        self.assertIn("BaseModel." + bm.id, models.storage.all().keys())
-        self.assertIn(bm, models.storage.all().values())
-        self.assertIn("User." + us.id, models.storage.all().keys())
-        self.assertIn(us, models.storage.all().values())
-        self.assertIn("State." + st.id, models.storage.all().keys())
-        self.assertIn(st, models.storage.all().values())
-        self.assertIn("Place." + pl.id, models.storage.all().keys())
-        self.assertIn(pl, models.storage.all().values())
-        self.assertIn("City." + cy.id, models.storage.all().keys())
-        self.assertIn(cy, models.storage.all().values())
-        self.assertIn("Amenity." + am.id, models.storage.all().keys())
-        self.assertIn(am, models.storage.all().values())
-        self.assertIn("Review." + rv.id, models.storage.all().keys())
-        self.assertIn(rv, models.storage.all().values())
+        wzqbm = BaseModel()
+        wzqus = wzqUser()
+        wzqst = wzqState()
+        wzqpl = wzqPlace()
+        wzqcy = wzqCity()
+        wzqam = Amenity()
+        wzqrv = wzqReview()
+        models.storage.new(wzqbm)
+        models.storage.new(wzqus)
+        models.storage.new(wzqst)
+        models.storage.new(wzqpl)
+        models.storage.new(wzqcy)
+        models.storage.new(wzqam)
+        models.storage.new(wzqrv)
+        self.assertIn("BaseModel." + wzqbm.id, models.storage.all().keys())
+        self.assertIn(wzqbm, models.storage.all().values())
+        self.assertIn("User." + wzqus.id, models.storage.all().keys())
+        self.assertIn(wzqus, models.storage.all().values())
+        self.assertIn("State." + wzqst.id, models.storage.all().keys())
+        self.assertIn(wzqst, models.storage.all().values())
+        self.assertIn("Place." + wzqpl.id, models.storage.all().keys())
+        self.assertIn(wzqpl, models.storage.all().values())
+        self.assertIn("City." + wzqcy.id, models.storage.all().keys())
+        self.assertIn(wzqcy, models.storage.all().values())
+        self.assertIn("Amenity." + wzqam.id, models.storage.all().keys())
+        self.assertIn(wzqam, models.storage.all().values())
+        self.assertIn("Review." + wzqrv.id, models.storage.all().keys())
+        self.assertIn(wzqrv, models.storage.all().values())
 
     def test_new_with_args(self):
         with self.assertRaises(TypeError):
