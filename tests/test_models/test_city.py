@@ -14,7 +14,7 @@ from time import sleep
 from models.city import wzqCity
 
 
-class TestCity_instantiation(unittest.TestCase):
+class wzqTestCity_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the City class."""
 
     def test_no_args_instantiates(self):
@@ -90,7 +90,7 @@ class TestCity_instantiation(unittest.TestCase):
             wzqCity(id=None, created_at=None, updated_at=None)
 
 
-class TestCity_save(unittest.TestCase):
+class wzqTestCity_save(unittest.TestCase):
     """Unittests for testing save method of the City class."""
 
     @classmethod
@@ -141,7 +141,7 @@ class TestCity_save(unittest.TestCase):
             self.assertIn(cyid, f.read())
 
 
-class TestCity_to_dict(unittest.TestCase):
+class wzqTestCity_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the City class."""
 
     def test_to_dict_type(self):
