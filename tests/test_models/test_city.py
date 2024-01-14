@@ -11,60 +11,60 @@ import models
 import unittest
 from datetime import datetime
 from time import sleep
-from models.city import City
+from models.city import wzqCity
 
 
 class TestCity_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the City class."""
 
     def test_no_args_instantiates(self):
-        self.assertEqual(City, type(City()))
+        self.assertEqual(wzqCity, type(wzqCity()))
 
     def test_new_instance_stored_in_objects(self):
-        self.assertIn(City(), models.storage.all().values())
+        self.assertIn(wzqCity(), models.storage.all().values())
 
     def test_id_is_public_str(self):
-        self.assertEqual(str, type(City().id))
+        self.assertEqual(str, type(wzqCity().id))
 
     def test_created_at_is_public_datetime(self):
-        self.assertEqual(datetime, type(City().created_at))
+        self.assertEqual(datetime, type(wzqCity().created_at))
 
     def test_updated_at_is_public_datetime(self):
-        self.assertEqual(datetime, type(City().updated_at))
+        self.assertEqual(datetime, type(wzqCity().updated_at))
 
     def test_state_id_is_public_class_attribute(self):
-        cy = City()
-        self.assertEqual(str, type(City.state_id))
+        cy = wzqCity()
+        self.assertEqual(str, type(wzqCity.state_id))
         self.assertIn("state_id", dir(cy))
         self.assertNotIn("state_id", cy.__dict__)
 
     def test_name_is_public_class_attribute(self):
-        cy = City()
-        self.assertEqual(str, type(City.name))
+        cy = wzqCity()
+        self.assertEqual(str, type(wzqCity.name))
         self.assertIn("name", dir(cy))
         self.assertNotIn("name", cy.__dict__)
 
     def test_two_cities_unique_ids(self):
-        cy1 = City()
-        cy2 = City()
+        cy1 = wzqCity()
+        cy2 = wzqCity()
         self.assertNotEqual(cy1.id, cy2.id)
 
     def test_two_cities_different_created_at(self):
-        cy1 = City()
+        cy1 = wzqCity()
         sleep(0.05)
-        cy2 = City()
+        cy2 = wzqCity()
         self.assertLess(cy1.created_at, cy2.created_at)
 
     def test_two_cities_different_updated_at(self):
-        cy1 = City()
+        cy1 = wzqCity()
         sleep(0.05)
-        cy2 = City()
+        cy2 = wzqCity()
         self.assertLess(cy1.updated_at, cy2.updated_at)
 
     def test_str_representation(self):
         dt = datetime.today()
         dt_repr = repr(dt)
-        cy = City()
+        cy = wzqCity()
         cy.id = "123456"
         cy.created_at = cy.updated_at = dt
         cystr = cy.__str__()
@@ -74,20 +74,20 @@ class TestCity_instantiation(unittest.TestCase):
         self.assertIn("'updated_at': " + dt_repr, cystr)
 
     def test_args_unused(self):
-        cy = City(None)
+        cy = wzqCity(None)
         self.assertNotIn(None, cy.__dict__.values())
 
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        cy = City(id="345", created_at=dt_iso, updated_at=dt_iso)
+        cy = wzqCity(id="345", created_at=dt_iso, updated_at=dt_iso)
         self.assertEqual(cy.id, "345")
         self.assertEqual(cy.created_at, dt)
         self.assertEqual(cy.updated_at, dt)
 
     def test_instantiation_with_None_kwargs(self):
         with self.assertRaises(TypeError):
-            City(id=None, created_at=None, updated_at=None)
+            wzqCity(id=None, created_at=None, updated_at=None)
 
 
 class TestCity_save(unittest.TestCase):
@@ -111,14 +111,14 @@ class TestCity_save(unittest.TestCase):
             pass
 
     def test_one_save(self):
-        cy = City()
+        cy = wzqCity()
         sleep(0.05)
         first_updated_at = cy.updated_at
         cy.save()
         self.assertLess(first_updated_at, cy.updated_at)
 
     def test_two_saves(self):
-        cy = City()
+        cy = wzqCity()
         sleep(0.05)
         first_updated_at = cy.updated_at
         cy.save()
@@ -129,12 +129,12 @@ class TestCity_save(unittest.TestCase):
         self.assertLess(second_updated_at, cy.updated_at)
 
     def test_save_with_arg(self):
-        cy = City()
+        cy = wzqCity()
         with self.assertRaises(TypeError):
             cy.save(None)
 
     def test_save_updates_file(self):
-        cy = City()
+        cy = wzqCity()
         cy.save()
         cyid = "City." + cy.id
         with open("file.json", "r") as f:
@@ -145,24 +145,24 @@ class TestCity_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the City class."""
 
     def test_to_dict_type(self):
-        self.assertTrue(dict, type(City().to_dict()))
+        self.assertTrue(dict, type(wzqCity().to_dict()))
 
     def test_to_dict_contains_correct_keys(self):
-        cy = City()
+        cy = wzqCity()
         self.assertIn("id", cy.to_dict())
         self.assertIn("created_at", cy.to_dict())
         self.assertIn("updated_at", cy.to_dict())
         self.assertIn("__class__", cy.to_dict())
 
     def test_to_dict_contains_added_attributes(self):
-        cy = City()
+        cy = wzqCity()
         cy.middle_name = "Holberton"
         cy.my_number = 98
         self.assertEqual("Holberton", cy.middle_name)
         self.assertIn("my_number", cy.to_dict())
 
     def test_to_dict_datetime_attributes_are_strs(self):
-        cy = City()
+        cy = wzqCity()
         cy_dict = cy.to_dict()
         self.assertEqual(str, type(cy_dict["id"]))
         self.assertEqual(str, type(cy_dict["created_at"]))
@@ -170,7 +170,7 @@ class TestCity_to_dict(unittest.TestCase):
 
     def test_to_dict_output(self):
         dt = datetime.today()
-        cy = City()
+        cy = wzqCity()
         cy.id = "123456"
         cy.created_at = cy.updated_at = dt
         tdict = {
@@ -182,11 +182,11 @@ class TestCity_to_dict(unittest.TestCase):
         self.assertDictEqual(cy.to_dict(), tdict)
 
     def test_contrast_to_dict_dunder_dict(self):
-        cy = City()
+        cy = wzqCity()
         self.assertNotEqual(cy.to_dict(), cy.__dict__)
 
     def test_to_dict_with_arg(self):
-        cy = City()
+        cy = wzqCity()
         with self.assertRaises(TypeError):
             cy.to_dict(None)
 

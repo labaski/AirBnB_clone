@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class City(BaseModel):
+class wzqCity(BaseModel):
     """Represent a city.
 
     Attributes:
