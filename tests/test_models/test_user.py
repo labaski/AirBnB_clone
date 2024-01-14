@@ -14,7 +14,7 @@ from time import sleep
 from models.user import wzqUser
 
 
-class TestUser_instantiation(unittest.TestCase):
+class wzqTestUser_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the User class."""
 
     def test_no_args_instantiates(self):
@@ -90,7 +90,7 @@ class TestUser_instantiation(unittest.TestCase):
             wzqUser(id=None, created_at=None, updated_at=None)
 
 
-class TestUser_save(unittest.TestCase):
+class wzqTestUser_save(unittest.TestCase):
     """Unittests for testing save method of the  class."""
 
     @classmethod
@@ -141,7 +141,7 @@ class TestUser_save(unittest.TestCase):
             self.assertIn(usid, f.read())
 
 
-class TestUser_to_dict(unittest.TestCase):
+class wzqTestUser_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the User class."""
 
     def test_to_dict_type(self):
