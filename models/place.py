@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class Place(BaseModel):
+class wzqPlace(BaseModel):
     """Represent a place.
 
     Attributes:
@@ -20,7 +20,7 @@ class Place(BaseModel):
         amenity_ids (list): A list of Amenity ids.
     """
 
-    city_id = ""
+    wqzcity_id = ""
     user_id = ""
     name = ""
     description = ""

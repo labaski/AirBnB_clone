@@ -14,7 +14,7 @@ from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models.user import User
 from models.state import State
-from models.place import Place
+from models.place import wzqPlace
 from models.city import wzqCity
 from models.amenity import Amenity
 from models.review import Review
@@ -73,7 +73,7 @@ class TestFileStorage_methods(unittest.TestCase):
         bm = BaseModel()
         us = User()
         st = State()
-        pl = Place()
+        pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
         rv = Review()
@@ -107,7 +107,7 @@ class TestFileStorage_methods(unittest.TestCase):
         bm = BaseModel()
         us = User()
         st = State()
-        pl = Place()
+        pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
         rv = Review()
@@ -138,7 +138,7 @@ class TestFileStorage_methods(unittest.TestCase):
         bm = BaseModel()
         us = User()
         st = State()
-        pl = Place()
+        pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
         rv = Review()
