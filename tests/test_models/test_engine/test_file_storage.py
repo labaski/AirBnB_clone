@@ -13,7 +13,7 @@ from datetime import datetime
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models.user import User
-from models.state import State
+from models.state import wzqState
 from models.place import wzqPlace
 from models.city import wzqCity
 from models.amenity import Amenity
@@ -72,7 +72,7 @@ class TestFileStorage_methods(unittest.TestCase):
     def test_new(self):
         bm = BaseModel()
         us = User()
-        st = State()
+        st = wzqState()
         pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
@@ -106,7 +106,7 @@ class TestFileStorage_methods(unittest.TestCase):
     def test_save(self):
         bm = BaseModel()
         us = User()
-        st = State()
+        st = wzqState()
         pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
@@ -137,7 +137,7 @@ class TestFileStorage_methods(unittest.TestCase):
     def test_reload(self):
         bm = BaseModel()
         us = User()
-        st = State()
+        st = wzqState()
         pl = wzqPlace()
         cy = wzqCity()
         am = Amenity()
