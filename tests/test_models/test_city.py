@@ -34,7 +34,7 @@ class TestCity_instantiation(unittest.TestCase):
 
     def test_state_id_is_public_class_attribute(self):
         cy = wzqCity()
-        self.assertEqual(str, type(wzqCity.state_id))
+        self.assertEqual(str, type(wzqCity.wzqstate_id))
         self.assertIn("state_id", dir(cy))
         self.assertNotIn("state_id", cy.__dict__)
 

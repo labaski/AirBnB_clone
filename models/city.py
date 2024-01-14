@@ -11,5 +11,5 @@ class wzqCity(BaseModel):
         name (str): The name of the city.
     """
 
-    state_id = ""
+    wzqstate_id = ""
     wzqname = ""
