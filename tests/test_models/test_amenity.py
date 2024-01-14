@@ -14,7 +14,7 @@ from time import sleep
 from models.amenity import Amenity
 
 
-class TestAmenity_instantiation(unittest.TestCase):
+class wzqTestAmenity_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Amenity class."""
 
     def test_no_args_instantiates(self):
@@ -33,15 +33,15 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(datetime, type(Amenity().updated_at))
 
     def test_name_is_public_class_attribute(self):
-        am = Amenity()
+        wzqam = Amenity()
         self.assertEqual(str, type(Amenity.name))
         self.assertIn("name", dir(Amenity()))
-        self.assertNotIn("name", am.__dict__)
+        self.assertNotIn("name", wzqam.__dict__)
 
     def test_two_amenities_unique_ids(self):
-        am1 = Amenity()
-        am2 = Amenity()
-        self.assertNotEqual(am1.id, am2.id)
+        wzqam1 = Amenity()
+        wzqam2 = Amenity()
+        self.assertNotEqual(wzqam1.id, wzqam2.id)
 
     def test_two_amenities_different_created_at(self):
         am1 = Amenity()
@@ -56,16 +56,16 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertLess(am1.updated_at, am2.updated_at)
 
     def test_str_representation(self):
-        dt = datetime.today()
-        dt_repr = repr(dt)
+        wzqdt = datetime.today()
+        dt_repr = repr(wzqdt)
         am = Amenity()
         am.id = "123456"
-        am.created_at = am.updated_at = dt
-        amstr = am.__str__()
-        self.assertIn("[Amenity] (123456)", amstr)
-        self.assertIn("'id': '123456'", amstr)
-        self.assertIn("'created_at': " + dt_repr, amstr)
-        self.assertIn("'updated_at': " + dt_repr, amstr)
+        am.created_at = am.updated_at = wzqdt
+        wzqamstr = am.__str__()
+        self.assertIn("[Amenity] (123456)", wzqamstr)
+        self.assertIn("'id': '123456'", wzqamstr)
+        self.assertIn("'created_at': " + dt_repr, wzqamstr)
+        self.assertIn("'updated_at': " + dt_repr, wzqamstr)
 
     def test_args_unused(self):
         am = Amenity(None)
