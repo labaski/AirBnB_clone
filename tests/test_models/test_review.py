@@ -14,7 +14,7 @@ from time import sleep
 from models.review import wzqReview
 
 
-class TestReview_instantiation(unittest.TestCase):
+class wzqTestReview_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Review class."""
 
     def test_no_args_instantiates(self):
@@ -96,7 +96,7 @@ class TestReview_instantiation(unittest.TestCase):
             wzqReview(id=None, created_at=None, updated_at=None)
 
 
-class TestReview_save(unittest.TestCase):
+class wzqTestReview_save(unittest.TestCase):
     """Unittests for testing save method of the Review class."""
 
     @classmethod
@@ -147,7 +147,7 @@ class TestReview_save(unittest.TestCase):
             self.assertIn(rvid, f.read())
 
 
-class TestReview_to_dict(unittest.TestCase):
+class wzqTestReview_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the Review class."""
 
     def test_to_dict_type(self):
