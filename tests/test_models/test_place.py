@@ -14,7 +14,7 @@ from time import sleep
 from models.place import wzqPlace
 
 
-class TestPlace_instantiation(unittest.TestCase):
+class wzqTestPlace_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Place class."""
 
     def test_no_args_instantiates(self):
@@ -144,7 +144,7 @@ class TestPlace_instantiation(unittest.TestCase):
             wzqPlace(id=None, created_at=None, updated_at=None)
 
 
-class TestPlace_save(unittest.TestCase):
+class wzqTestPlace_save(unittest.TestCase):
     """Unittests for testing save method of the Place class."""
 
     @classmethod
@@ -195,7 +195,7 @@ class TestPlace_save(unittest.TestCase):
             self.assertIn(plid, f.read())
 
 
-class TestPlace_to_dict(unittest.TestCase):
+class wzqTestPlace_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the Place class."""
 
     def test_to_dict_type(self):
