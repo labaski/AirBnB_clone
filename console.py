@@ -14,24 +14,24 @@ from models.review import wzqReview
 
 
 def parse(arg):
-    curly_braces = re.search(r"\{(.*?)\}", arg)
-    brackets = re.search(r"\[(.*?)\]", arg)
-    if curly_braces is None:
-        if brackets is None:
+    wzqcurly_braces = re.search(r"\{(.*?)\}", arg)
+    wzqbrackets = re.search(r"\[(.*?)\]", arg)
+    if wzqcurly_braces is None:
+        if wzqbrackets is None:
             return [i.strip(",") for i in split(arg)]
         else:
-            lexer = split(arg[:brackets.span()[0]])
+            lexer = split(arg[:wzqbrackets.span()[0]])
             retl = [i.strip(",") for i in lexer]
-            retl.append(brackets.group())
+            retl.append(wzqbrackets.group())
             return retl
     else:
-        lexer = split(arg[:curly_braces.span()[0]])
+        lexer = split(arg[:wzqcurly_braces.span()[0]])
         retl = [i.strip(",") for i in lexer]
-        retl.append(curly_braces.group())
+        retl.append(wzqcurly_braces.group())
         return retl
 
 
-class HBNBCommand(cmd.Cmd):
+class wzqHBNBCommand(cmd.Cmd):
     """Defines the HolbertonBnB command interpreter.
 
     Attributes:
@@ -90,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
         argl = parse(arg)
         if len(argl) == 0:
             print("** class name missing **")
-        elif argl[0] not in HBNBCommand.__classes:
+        elif argl[0] not in wzqHBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
             print(eval(argl[0])().id)
@@ -104,7 +104,7 @@ class HBNBCommand(cmd.Cmd):
         objdict = storage.all()
         if len(argl) == 0:
             print("** class name missing **")
-        elif argl[0] not in HBNBCommand.__classes:
+        elif argl[0] not in wzqHBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(argl) == 1:
             print("** instance id missing **")
@@ -120,7 +120,7 @@ class HBNBCommand(cmd.Cmd):
         objdict = storage.all()
         if len(argl) == 0:
             print("** class name missing **")
-        elif argl[0] not in HBNBCommand.__classes:
+        elif argl[0] not in wzqHBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(argl) == 1:
             print("** instance id missing **")
@@ -134,17 +134,17 @@ class HBNBCommand(cmd.Cmd):
         """Usage: all or all <class> or <class>.all()
         Display string representations of all instances of a given class.
         If no class is specified, displays all instantiated objects."""
-        argl = parse(arg)
-        if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
+        wzqargl = parse(arg)
+        if len(wzqargl) > 0 and wzqargl[0] not in wzqHBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
-            objl = []
+            wzqobjl = []
             for obj in storage.all().values():
-                if len(argl) > 0 and argl[0] == obj.__class__.__name__:
-                    objl.append(obj.__str__())
-                elif len(argl) == 0:
-                    objl.append(obj.__str__())
-            print(objl)
+                if len(wzqargl) > 0 and wzqargl[0] == obj.__class__.__name__:
+                    wzqobjl.append(obj.__str__())
+                elif len(wzqargl) == 0:
+                    wzqobjl.append(obj.__str__())
+            print(wzqobjl)
 
     def do_count(self, arg):
         """Usage: count <class> or <class>.count()
@@ -163,18 +163,18 @@ class HBNBCommand(cmd.Cmd):
         Update a class instance of a given id by adding or updating
         a given attribute key/value pair or dictionary."""
         argl = parse(arg)
-        objdict = storage.all()
+        wzqobjdict = storage.all()
 
         if len(argl) == 0:
             print("** class name missing **")
             return False
-        if argl[0] not in HBNBCommand.__classes:
+        if argl[0] not in wzqHBNBCommand.__classes:
             print("** class doesn't exist **")
             return False
         if len(argl) == 1:
             print("** instance id missing **")
             return False
-        if "{}.{}".format(argl[0], argl[1]) not in objdict.keys():
+        if "{}.{}".format(argl[0], argl[1]) not in wzqobjdict.keys():
             print("** no instance found **")
             return False
         if len(argl) == 2:
@@ -188,14 +188,14 @@ class HBNBCommand(cmd.Cmd):
                 return False
 
         if len(argl) == 4:
-            obj = objdict["{}.{}".format(argl[0], argl[1])]
+            obj = wzqobjdict["{}.{}".format(argl[0], argl[1])]
             if argl[2] in obj.__class__.__dict__.keys():
                 valtype = type(obj.__class__.__dict__[argl[2]])
                 obj.__dict__[argl[2]] = valtype(argl[3])
             else:
                 obj.__dict__[argl[2]] = argl[3]
         elif type(eval(argl[2])) == dict:
-            obj = objdict["{}.{}".format(argl[0], argl[1])]
+            obj = wzqobjdict["{}.{}".format(argl[0], argl[1])]
             for k, v in eval(argl[2]).items():
                 if (k in obj.__class__.__dict__.keys() and
                         type(obj.__class__.__dict__[k]) in {str, int, float}):
@@ -207,4 +207,4 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
-    HBNBCommand().cmdloop()
+    wzqHBNBCommand().cmdloop()
