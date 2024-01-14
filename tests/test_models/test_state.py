@@ -14,7 +14,7 @@ from time import sleep
 from models.state import wzqState
 
 
-class TestState_instantiation(unittest.TestCase):
+class wzqTestState_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the State class."""
 
     def test_no_args_instantiates(self):
@@ -84,7 +84,7 @@ class TestState_instantiation(unittest.TestCase):
             wzqState(id=None, created_at=None, updated_at=None)
 
 
-class TestState_save(unittest.TestCase):
+class wzqTestState_save(unittest.TestCase):
     """Unittests for testing save method of the State class."""
 
     @classmethod
@@ -135,7 +135,7 @@ class TestState_save(unittest.TestCase):
             self.assertIn(stid, f.read())
 
 
-class TestState_to_dict(unittest.TestCase):
+class wzqTestState_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the State class."""
 
     def test_to_dict_type(self):
