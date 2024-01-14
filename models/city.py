@@ -12,4 +12,4 @@ class wzqCity(BaseModel):
     """
 
     state_id = ""
-    name = ""
+    wzqname = ""
