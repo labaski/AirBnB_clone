@@ -1,2 +1,1 @@
-Project made by ingchrist and bozy james 
-happy hacking
+made by two ing
