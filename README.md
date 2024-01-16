@@ -1,1 +1,1 @@
-made by two in   g
+made by two in g
